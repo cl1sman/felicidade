@@ -1,6 +1,39 @@
 public class Main {
     public static void main(String[] args) {
-        Esporte esporte = new Esporte();
+        
+        Leitor leitor = new Leitor();
+
+        int opcao;
+        do {
+            System.out.println("Escolha uma opção");
+            System.out.println("(1) Cadastrar pessoa");
+            System.out.println("(2) Sair");
+            opcao = leitor.leInteiro();
+
+            if(opcao == 1) {
+                System.out.println("1 - Politico ou 2 - YouTuber");
+                opcao = leitor.leInteiro();
+                if(opcao == 1) {
+                    System.out.println("Digite o CPF");
+                    int cpf = leitor.leInteiro();
+                    System.out.println("Digite o salário");
+                    double salario = leitor.leDouble();
+                    Pessoa p = new Politico(cpf, salario);
+                } else if(opcao == 2) {
+                    System.out.println("Digite o CPF");
+                    int cpf = leitor.leInteiro();
+                    System.out.println("Digite o salário");
+                    double quantidadeDeHoras = leitor.leDouble();
+                    Pessoa y = new YouTuber(cpf, quantidadeDeHoras);
+                }
+            }
+            else if(opcao == 2) {
+                System.out.println("Bye...");
+            }
+        } while (opcao != 2);
+
+        Atividades esporte = new Esporte();
+        
         esporte.setNome("Tenis");
         esporte.setIndividualOuEquipe("individual");
         esporte.setCustoDaHora(10.0);
