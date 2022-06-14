@@ -1,3 +1,3 @@
 public interface Valor {
-    void calculaValor();
+    int calculaValor();
 }

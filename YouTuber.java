@@ -13,7 +13,7 @@ public class YouTuber extends Pessoa{
     }
 
     @Override
-    public void calculaValor() {
+    public int calculaValor() {
         for(int i = 0; i < vetorAtividades.length; i++){
             if(vetorAtividades[i] instanceof Esporte){
                 Esporte e = (Esporte) vetorAtividades[i];
@@ -42,6 +42,7 @@ public class YouTuber extends Pessoa{
                 }
             }
         }
+        return getTotalAtividades();
     }
 
     public void setNoVetorDeAtividades(Atividades atividade){
